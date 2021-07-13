@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+// RESETTING ALL THE DEFAULTS
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: Roboto, "Times New Roman", Times, serif;
+    
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+// END OF RESETTING DEFAULTS
+
+.nav-container {
+    background-color: #5014fa;
+    a {
+        color: white;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+    .logo {
+        font-weight: bold;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+    }
+}
+
+.hero {
+    background: #5316ff;
+    opacity: 82%;
+    color: white;
+    display: flexbox;
+    text-align: center;
+    padding: 1em;
+}
+
+.title {
+    font-size: 1.64em;
+    text-transform: uppercase;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-bottom: -30px;
+    padding: 20px;
+}
+
+h1 {
+    position: relative;
+    .triangle-design {
+        position: absolute;
+        width: 299px;
+        height: 100px;
+        left: -98px;
+        bottom: 0;
+        z-index: -1;
+    }
+}
+
+// .gg-shape-triangle {
+//     position: relative;
+//     transform: scale(var(--ggs,1));
+//     width: 22px;
+//     height: 17px;
+//     border-left: 3px solid transparent;
+//     border-bottom: 3px solid
+// }
+// .gg-shape-triangle,
+// .gg-shape-triangle::before {
+//     display: block;
+//     box-sizing: border-box;
+//     border-right: 3px solid transparent
+// }
+// .gg-shape-triangle::before {
+//     content: "";
+//     position: absolute;
+//     width: 200px;
+//     height: 200px;
+//     border-left: 3px solid;
+//     border-top: 3px solid;
+//     border-bottom: 3px solid transparent;
+//     transform: rotate(45deg) skew(10deg,10deg);
+//     left: -2px;
+//     bottom: -13px
+// }
+
+//END OF Triangle
+
+.instruction {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+
+    h2 {
+        font-size: 1.2em;
+        font-weight: normal;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+}
+.search-wrap{
+    display: flex;
+    margin: 20px;
+    width: 420px;
+    height: 40px;
+    background: #fff;
+    border-radius: 30px !important;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    .search-container{
+        position: relative;
+        display: flex;
+        width: 100%;
+    }
+    .search-container__input-wrapper{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 55px;
+        //background-color: #fff !important;
+        input{
+            appearance: none;
+            width: 100%;
+            outline: 0;
+            border: none;
+            font-size: 28px;
+            text-align: center;
+            text-transform: uppercase;
+            
+        }
+    }
+}
+// .keyword-input {
+//     position: relative;
+//     padding: 1em;
+// }
+
+// #word-input {
+//     position: relative;
+// }
+
+.instruction::before {
+    content: "";
+    position: absolute;
+    width: 177px;
+    height: 177px;
+    border-radius: 50%;
+    background: #b940f1;
+    opacity: 54%;
+    z-index: -1;
+    left: 55%;
+    top: -200%;
+}
+
+.search-container__input-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: #e5d5fa;
+    top: -10px;
+    z-index: -1;
+}
+
+.youtube-video{
+    display: grid;
+    place-content: center;
+}
+
+.generate-button{
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+}
+
+.btn-new.btn-block{
+    display: block;
+    width: 300px;
+    height: 60px;
+    
+}
+.btn-new.primary{
+    background: #e8ac3d ;
+    box-shadow: 0 4px 0 #bc942d;
+}
+button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
+    cursor: pointer;
+}
+
+.btn-new{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+    font-size: 20px;
+    line-height: 22px;
+    font-stretch: semi-expanded;
+    color: black;
+    cursor: pointer;
+    outline: none !important;
+    font-weight: 400;
+    text-transform: uppercase;
+    top: 0;
+    left: 0;
+    transition: all .3s ease;
+    border: none;
+}
+.video-background{
+    display: flex;
+    height: 100px;
+    background-color: #5316ff;
+    opacity: 82%;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Video Generator</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="nav-container">
+        <header>
+            <a href="index.html" class="logo">Home</a>
+        </header>
+    </div>
+
+    <div class="hero">
+        <div class="content">
+            <div class="title">
+                <h1>Random Video Generator
+                    <svg class="triangle-design" width="259" height="120" viewBox="0 0 259 120" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.85421 118.5L129.5 2.0452L255.146 118.5H3.85421Z" stroke="black" stroke-width="3" />
+                        <path d="M3.85421 118.5L129.5 2.0452L255.146 118.5H3.85421Z" stroke="white" stroke-width="3" />
+                    </svg>
+                </h1>
+
+
+            </div>
+
+            <div class="instruction">
+                <h2>Enter a keyword to generate a random video :</h2>
+            </div>
+            <div class="search-wrap">
+                <div class="search-container">
+                    <div class="search-container__input-wrapper">
+                        <!-- <div class="keyword-input"> -->
+                        <input autofocus = "autofocus" id="word-input" type="text" placeholder="Type Keyword" required>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="youtube-video">
+                <iframe id="myFrame" width="724em" height="390em" src="">
+                </iframe>
+            </div>
+            <div class="generate-button">
+                <button class="btn-new search-advanced__button btn-block primary" onclick="getVideos()">GENERATE
+                    VIDEO</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="video-background">
+    </div>
+
+    <script>
+        const ApiKey = 'AIzaSyBPWQuoypbFG5vQGkbIB2-OQ-Sgc7tYWyw';
+        const count = 25;
+
+        let getVideos = () => {
+            const keyword = document.getElementById('word-input').value;
+            fetch(`https://www.googleapis.com/youtube/v3/search?key=${ApiKey}&maxResults=${count}&part=snippet&type=video&q=${keyword}`)
+                .then(response => {
+                    return response.json()
+                })
+                .then(data => {
+                    console.log(data);
+                    const ArrayLength = (data["items"]).length;
+                    let value = Math.floor(Math.random() * ArrayLength);
+                    console.log(value);
+                    const video = (data["items"][value].id.videoId);
+                    console.log(video)
+                    const video_link = `https://www.youtube.com/embed/${video}`;
+                    console.log(video_link);
+                    document.getElementById('myFrame').src = video_link;
+                })
+        }
+    </script>
+</body>
+
+</html>
